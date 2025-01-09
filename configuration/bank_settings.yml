@@ -1,0 +1,25 @@
+account_types:
+  - free:
+      limit: 128
+      shoplimit: 0
+      comission: 0.1
+  - premium:
+      limit: 999999999999999999
+      shoplimit: 16
+      comission: 0
+  - admin:
+      limit: 999999999999999999
+      shoplimit: 999999999999999999
+      comission: 0
+
+promocodes:
+  STARTNS4: 75
+  NETHERX01: 25
+  FREEPREMIUM010101: 100
+  NXWORK50: 50
+  NXWORK75: 75
+  UNBAN: 25
+  ZCRIPT01: 25
+  OPEN: 15
+
+log_channel: 1094230193234776114

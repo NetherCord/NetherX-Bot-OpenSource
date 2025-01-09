@@ -1,0 +1,6 @@
+disnake
+mysql-connector-python
+asyncio
+pyyaml
+fastapi
+uvicorn

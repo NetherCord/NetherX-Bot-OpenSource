@@ -1,0 +1,31 @@
+load_bank_accounts: "SELECT * FROM bank_accounts"
+load_products_data: "SELECT * FROM products_data"
+load_seller_data: "SELECT * FROM seller_data"
+load_api_tokens: "SELECT * FROM api_tokens"
+load_bills_data: "SELECT * FROM bills_data"
+
+get_id_by_card_number: "SELECT user_id FROM bank_accounts WHERE card_number = '%s'"
+
+delete_bill: "DELETE FROM bills_data WHERE bill_number = '%s'"
+
+save_bank_account: |
+  INSERT INTO bank_accounts (user_id, username, balance, card_type, card_number, channel_id)
+  VALUES ('%s', '%s', %s, '%s', '%s', '%s')
+  ON DUPLICATE KEY UPDATE
+  balance = VALUES(balance), card_type = VALUES(card_type)
+save_product: |
+  INSERT INTO products_data (product_quantity, author_id, product_name, price, description, link_to_image)
+  VALUES (%s, '%s', '%s', %s, '%s', '%s')
+  ON DUPLICATE KEY UPDATE
+  product_quantity = VALUES(product_quantity), author_id = VALUES(author_id), product_name = VALUES(product_name), price = VALUES(price), description = VALUES(description), link_to_image = VALUES(link_to_image)
+save_seller_data: |
+  INSERT INTO seller_data (seller_id, income, revenue, total_revenue)
+  VALUES ('%s', %s, %s, %s)
+  ON DUPLICATE KEY UPDATE
+  income = VALUES(income), revenue = VALUES(revenue), total_revenue = VALUES(total_revenue)
+save_api_tokens: |
+  INSERT INTO api_tokens (api_token, user_id, card_number)
+  VALUES ('%s', '%s', '%s')
+save_bills_data: |
+  INSERT INTO bills_data (bill_number, bill_name, amount, card_to)
+  VALUES ('%s', '%s', %s, '%s')

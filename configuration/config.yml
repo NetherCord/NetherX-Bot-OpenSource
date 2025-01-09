@@ -1,0 +1,23 @@
+debug: False
+maintance: False
+card_validation_regex: "^([0-9]{6}|[0-9]{16})$"
+
+vigenere_alphabet: "456ABCDFGN3THERXIJKLMOPQSUVWYZ789012"
+vigenere_key: "GIGAPENIS"
+
+discord_token: 'PLACEHOLDER_TOKEN'
+database:
+  table_prefix: netherx_
+  database: PLACEHOLDER_DB
+  host: PLACEHOLDER_DBHOST
+  user: 'PLACEHOLDER_USER'
+  password: 'PLACEHOLDER_PASSWORD'
+
+cache_dir:
+  - .cache
+  - NetherX
+cache_file: cache.dat
+
+api:
+  port: 3000
+  hash:
